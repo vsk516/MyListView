@@ -1,10 +1,12 @@
 package com.example.vamsisaikrishna.mylistview;
 
+import java.io.Serializable;
+
 /**
  * Created by Vamsisaikrishna on 1/17/2018.
  */
 
-public class Person {
+public class Person implements Serializable{
 
     private  String name;
     private String company;

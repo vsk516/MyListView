@@ -1,5 +1,7 @@
 package com.example.vamsisaikrishna.mylistview;
 
+import android.content.Intent;
+import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -53,7 +55,12 @@ public class MainActivity extends AppCompatActivity {
         mlistView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getApplicationContext()," "+mperson.get(position).getName(),Toast.LENGTH_SHORT).show();
+               // Toast.makeText(getApplicationContext()," "+mperson.get(position).getName(),Toast.LENGTH_SHORT).show();
+
+                Intent in = new Intent(getApplicationContext(),PersonViewActivity.class);
+                Person selectedPerson =mperson.get(position);
+                in.putExtra("selectedPerson", selectedPerson);
+                startActivity(in);
             }
         });
     }
